@@ -11,7 +11,6 @@ import java.util.List;
 public class PrendaService {
     @Autowired
     private PrendaRepository prendaRepository;
-
     public Prenda guardarPrenda(Prenda prenda){
         return prendaRepository.save(prenda);
     }

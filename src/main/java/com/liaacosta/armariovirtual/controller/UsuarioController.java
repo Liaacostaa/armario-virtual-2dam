@@ -48,7 +48,6 @@ public class UsuarioController {
         if (!contrasenaCorrecta) {
             return ResponseEntity.status(401).build();
         }
-
         String token = jwtUtil.generarToken(usuario.get().getEmail());
         return ResponseEntity.ok(new LoginResponse(token));
     }
