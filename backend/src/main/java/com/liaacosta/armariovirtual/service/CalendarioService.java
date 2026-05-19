@@ -17,7 +17,7 @@ public class CalendarioService {
     public List<Calendario> listaUsuarios(Long id){
         return calendarioRepository.findByUsuarioId(id);
     }
-    public void eliminarCalendario(Long id){
+    public void eliminarEvento(Long id){
         calendarioRepository.deleteById(id);
     }
 }

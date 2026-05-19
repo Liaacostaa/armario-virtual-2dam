@@ -30,5 +30,12 @@ public class UsuarioService {
     public void eliminarUsuario(Long id) {
         usuarioRepository.deleteById(id);
     }
+    public Optional<Usuario> buscarPorId(Long id) {
+        return usuarioRepository.findById(id);
+    }
+
+    public Usuario guardarSinHash(Usuario usuario) {
+        return usuarioRepository.save(usuario);
+    }
 
 }

@@ -3,6 +3,12 @@ package com.liaacosta.armariovirtual.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 @Table(name = "outfits")
@@ -28,6 +34,22 @@ public class Outfit {
     }
     @Column(name = "fecha_creacion")
     private LocalDateTime fechaCreacion;
+
+    @ManyToMany
+    @JoinTable(
+            name = "outfit_prendas",
+            joinColumns = @JoinColumn(name = "id_outfit"),
+            inverseJoinColumns = @JoinColumn(name = "id_prenda")
+    )
+    private List<Prenda> prendas = new ArrayList<>();
+
+    public List<Prenda> getPrendas() {
+        return prendas;
+    }
+
+    public void setPrendas(List<Prenda> prendas) {
+        this.prendas = prendas;
+    }
 
     public Long getId() {
         return id;

@@ -24,4 +24,7 @@ public class OutfitService {
     public void eliminarOutfit(Long id){
         outfitRepository.deleteById(id);
     }
+    public Outfit buscarPorId(Long id) {
+        return outfitRepository.findById(id).orElseThrow();
+    }
 }

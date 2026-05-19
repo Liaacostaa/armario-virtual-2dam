@@ -22,7 +22,7 @@ public class CalendarioController {
         return calendarioService.listaUsuarios(id);
     }
     @DeleteMapping("/eliminar/{id}")
-    public void eliminarCalendario(@PathVariable Long id){
-        calendarioService.eliminarCalendario(id);
+    public void eliminarEvento(@PathVariable Long id){
+        calendarioService.eliminarEvento(id);
     }
 }
